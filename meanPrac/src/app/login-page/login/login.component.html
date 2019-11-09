@@ -1,0 +1,42 @@
+<form (submit)="handleLoginSubmit(loginForm)" #loginForm="ngForm">
+
+  <div class="card">
+
+    <div class="card-body">
+      <h1 class="card-header">Login</h1>
+      <div class="form-input">
+
+        <label [ngClass]="{'active': inActiveusername}">UserName:</label>
+
+        <input type="text" name="username" (click)="onClickusername()" (blur)="onBlurusername(username)" #username="ngModel" ngModel/>
+
+      </div>
+
+      <div class="form-input">
+
+        <label [ngClass]="{'active': inActivepassword}">Password:</label>
+        <input  type="password" name="password" (click)="onClickpassword()" (blur)="onBlurpassword(password)" #password="ngModel" ngModel/>
+
+      </div>
+
+      <div class="card-footer-item">
+
+        <button type="submit" class="btn">Login</button>
+
+      </div>
+
+      <div class="card-footer-item">
+
+        <a [routerLink]="['register']">Create Acount</a>
+
+      </div>
+
+      <div class="card-footer-item for-message">
+        <div class="message" [ngClass]="{'error': error}">{{message}}</div>
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

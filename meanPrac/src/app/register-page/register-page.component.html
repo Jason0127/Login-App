@@ -1,0 +1,54 @@
+<form (submit)="handleRegisterSubmit(registerForm)" #registerForm="ngForm">
+
+  <div class="card">
+
+    <div class="card-body">
+
+      <h1 class="card-header">Create Account</h1>
+
+      <div class="form-input">
+
+        <label [ngClass]="{active: inActiveusername}">Username</label>
+        <input name="username" type="text" (click)="onClickusername()" (blur)="onBlurusername(username)" #username="ngModel" ngModel/>
+
+      </div>
+
+      <div class="form-input">
+
+        <label [ngClass]="{active: inActivepassword}">Password</label>
+        <input type="password" name="password" (click)="onClickpassword()" (blur)="onBlurpassword(password)" #password ngModel />
+
+      </div>
+
+      <div class="form-input">
+
+        <label [ngClass]="{active: inActiveFirstName}">First Name:</label>
+        <input type="text" name="firstName" (click)="onClickFirstName()" (blur)="onBlurFirstName(firstName)" #firstName ngModel />
+
+      </div>
+
+      <div class="form-input">
+
+        <label [ngClass]="{active: inActiveLastName}">Last Name:</label>
+        <input type="text" name="lastName" (click)="onClickLastName()" (blur)="onBlurLastName(lastName)" #lastName ngModel />
+
+      </div>
+
+      <div class="card-footer-item">
+          <button type="submit" class="btn">Save</button>
+      </div>
+
+      <div class="card-footer-item">
+        <a [routerLink]="['/']" style="z-index: 1;">Login Page</a>
+      </div>
+
+      <div class="card-footer-item for-message">
+        <div class="message" [ngClass]="{'error': error , 'success': success}">{{message}}</div>
+      </div>
+
+    </div>
+
+
+  </div>
+
+</form>
